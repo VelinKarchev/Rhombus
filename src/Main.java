@@ -19,6 +19,7 @@ public class Main {
     Constraints
     N will always be a positive even number between 6 and 80 inclusive.
 
+
          */
 
         Scanner scanner = new Scanner(System.in);
