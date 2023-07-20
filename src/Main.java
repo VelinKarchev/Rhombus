@@ -19,12 +19,52 @@ public class Main {
     Constraints
     N will always be a positive even number between 6 and 80 inclusive.
 
-
          */
+/*
+          6
+
+        ../\..
+        ./  \.
+        / /\ \
+        \ \/ /
+       .\  /.
+        ..\/..
+
+          8
+
+        .../\...
+        ../  \..
+        ./ /\ \.
+        / /  \ \
+        \ \  / /
+        .\ \/ /.
+        ..\  /..
+        ...\/...
+
+        12
+
+        ...../\.....
+        ..../  \....
+        .../ /\ \...
+        ../ /  \ \..
+        ./ / /\ \ \.
+        / / /  \ \ \
+        \ \ \  / / /
+        .\ \ \/ / /.
+        ..\ \  / /..
+        ...\ \/ /...
+        ....\  /....
+        .....\/.....
+
+ */
+
+
 
         Scanner scanner = new Scanner(System.in);
 
         int outerRhombSize = Integer.parseInt(scanner.nextLine());
+
+
 
 
 
