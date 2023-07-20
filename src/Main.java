@@ -27,7 +27,7 @@ public class Main {
         ./  \.
         / /\ \
         \ \/ /
-       .\  /.
+        .\  /.
         ..\/..
 
           8
@@ -64,9 +64,18 @@ public class Main {
 
         int outerRhombSize = Integer.parseInt(scanner.nextLine());
 
+        printUpperHalfRhombus(outerRhombSize);
 
+    }
 
+    private static void printUpperHalfRhombus(int outerRhombSize){
+        int halfSize = outerRhombSize / 2;
 
+        for (int i = 0; i < halfSize; i++) {
+            for (int j = 0; j < ; j++) {
+                
+            }
+        }
 
     }
 }
