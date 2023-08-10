@@ -8,8 +8,8 @@ public class Main {
         Character[][] matrix = new Character[outerRhombSize][outerRhombSize];
         fillTheMatrixWithDots(matrix);
 
-        //fillUpperHalfRhombus(matrix);
-        fillBottomHalfRhombus(matrix);
+        fillUpperHalfRhombus(matrix);
+       // fillBottomHalfRhombus(matrix);
 
         printMatrix(matrix);
     }
@@ -46,6 +46,9 @@ public class Main {
                if (index % 2 == 0){
                    matrix[i][(matrix.length/2) - 1] = '/';
                    matrix[i][(matrix.length/2) ] = '\\';
+               } else if (index % 2 != 0){
+                   matrix[i][(matrix.length/2) - 1 - i] = '/';
+                   matrix[i][(matrix.length/2) + i ] = '\\';
                }
 
 
@@ -56,19 +59,20 @@ public class Main {
     }
 
     private static void fillBottomHalfRhombus(Character[][] matrix) {
-        int index = matrix.length;
-        int halfSize = (matrix.length / 2) + 1;
 
-        for (int i = halfSize - 1; i > 0; i--) {
+        int halfSize = (matrix.length / 2) ;
+        int index = halfSize;
+
+        for (int i = halfSize; i > 0; i--) {
             for (int j = matrix.length; j > 0; j--) {
-                if (index == matrix.length + 1 || index % 2 != 0){
-                   matrix[matrix.length - i][(matrix.length/2) - 1]  = '\\';
-                    matrix[matrix.length - i][(matrix.length/2) ] = '/';
+                if (index == matrix.length -1   || index % 2 != 0){
+                   matrix[matrix.length - i ][(matrix.length/2) - 1]  = '\\';
+                    matrix[matrix.length - i ][(matrix.length/2) ] = '/';
                 }
 
 
             }
-            index--;
+            index++;
         }
     }
 }
