@@ -1,70 +1,17 @@
 import java.util.Scanner;
 
 public class Main {
-
-
-    /*
-    By given dimensions print the pattern consisting of many embedded rhombs represented with
-    “/” and “\” and separated by space and “.” for the rest of the pattern. The pattern looks like:
-Input
-The input data should be read from the console.
-You have an integer number N (always even number) showing the width and the height of the most outer rhomb.
-The width and the height will always be equal number of symbols on the terminal.
-The input data will always be valid and in the format described. There is no need to check it explicitly.
-Output
-The output should be printed on the console.
-Use the “/” and “\” characters to print the rhomb sides and “.” (Dot) for the rest.
-You should print exactly one space between each rhomb. See the examples below.
-Constraints
-N will always be a positive even number between 6 and 80 inclusive.
-
-     */
-/*
-          6
-
-        ../\..
-        ./  \.
-        / /\ \
-        \ \/ /
-        .\  /.
-        ..\/..
-
-          8
-
-        .../\...
-        ../  \..
-        ./ /\ \.
-        / /  \ \
-        \ \  / /
-        .\ \/ /.
-        ..\  /..
-        ...\/...
-
-        12
-
-        ...../\.....
-        ..../  \....
-        .../ /\ \...
-        ../ /  \ \..
-        ./ / /\ \ \.
-        / / /  \ \ \
-        \ \ \  / / /
-        .\ \ \/ / /.
-        ..\ \  / /..
-        ...\ \/ /...
-        ....\  /....
-        .....\/.....
-
- */
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
-
-
         int outerRhombSize = readInput(scanner);
 
-        printUpperHalfRhombus(outerRhombSize);
-        printBottomHalfRhombus(outerRhombSize);
+        Character[][] matrix = new Character[outerRhombSize][outerRhombSize];
+        fillTheMatrixWithDots(matrix);
+
+        //fillUpperHalfRhombus(matrix);
+        fillBottomHalfRhombus(matrix);
+
+        printMatrix(matrix);
     }
 
 
@@ -72,27 +19,56 @@ N will always be a positive even number between 6 and 80 inclusive.
         return Integer.parseInt(scanner.nextLine());
     }
 
-    private static void printUpperHalfRhombus(int outerRhombSize) {
-        int halfSize = outerRhombSize / 2;
+    public static Character[][] fillTheMatrixWithDots(Character[][] matrix) {
 
-        for (int i = 0; i < halfSize; i++) {
-            //dots
-            for (int j = 0; j < halfSize - 1; j++) {
-
-                    System.out.print(".");
-
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                matrix[i][j] = '.';
             }
+        }
+        return matrix;
+    }
 
+    public static void printMatrix(Character[][] matrix) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                System.out.print(matrix[i][j]);
+            }
             System.out.println();
         }
     }
-    private static void printBottomHalfRhombus(int outerRhombSize) {
-        int halfSize = outerRhombSize / 2;
-        for (int i = halfSize; i > 0; i--) {
-            for (int j = outerRhombSize; j > 0; j--) {
-                System.out.print(".");
+
+    private static void fillUpperHalfRhombus(Character[][] matrix) {
+        int index = 0;
+        int halfSize = matrix.length / 2;
+        for (int i = 0; i < halfSize; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+               if (index % 2 == 0){
+                   matrix[i][(matrix.length/2) - 1] = '/';
+                   matrix[i][(matrix.length/2) ] = '\\';
+               }
+
+
+
             }
-            System.out.println();
+            index++;
+        }
+    }
+
+    private static void fillBottomHalfRhombus(Character[][] matrix) {
+        int index = matrix.length;
+        int halfSize = (matrix.length / 2) + 1;
+
+        for (int i = halfSize - 1; i > 0; i--) {
+            for (int j = matrix.length; j > 0; j--) {
+                if (index == matrix.length + 1 || index % 2 != 0){
+                   matrix[matrix.length - i][(matrix.length/2) - 1]  = '\\';
+                    matrix[matrix.length - i][(matrix.length/2) ] = '/';
+                }
+
+
+            }
+            index--;
         }
     }
 }
