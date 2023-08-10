@@ -74,12 +74,15 @@ N will always be a positive even number between 6 and 80 inclusive.
 
     private static void printUpperHalfRhombus(int outerRhombSize) {
         int halfSize = outerRhombSize / 2;
+
         for (int i = 0; i < halfSize; i++) {
             //dots
-            for (int j = 0; j < halfSize; j++) {
+            for (int j = 0; j < halfSize - 1; j++) {
 
                     System.out.print(".");
+
             }
+
             System.out.println();
         }
     }
