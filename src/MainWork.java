@@ -94,9 +94,10 @@ public class MainWork {
                     matrix[matrix.length - i][(matrix.length / 2) - 1 + i] = '/';
                     matrix[matrix.length - i][(matrix.length / 2) - i] = '\\';
 
-                    matrix[matrix.length - i][(matrix.length / 2) - 1 + i] = '/';
+
                     if ( i != 2) {
                         matrix[matrix.length - i][(matrix.length / 2) - i + 2] = '\\';
+                        matrix[matrix.length - i][(matrix.length / 2) - 3 + i] = '/';
                     }
 
 
