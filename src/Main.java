@@ -9,9 +9,10 @@ public class Main {
         fillTheMatrixWithDots(matrix);
 
         fillUpperHalfRhombus(matrix);
-       // fillBottomHalfRhombus(matrix);
+        fillBottomHalfRhombus(matrix);
 
         printMatrix(matrix);
+
     }
 
 
@@ -19,14 +20,14 @@ public class Main {
         return Integer.parseInt(scanner.nextLine());
     }
 
-    public static Character[][] fillTheMatrixWithDots(Character[][] matrix) {
+    public static void fillTheMatrixWithDots(Character[][] matrix) {
 
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix.length; j++) {
-                matrix[i][j] = '.';
+                matrix[i][j] = ' ';
             }
         }
-        return matrix;
+
     }
 
     public static void printMatrix(Character[][] matrix) {
@@ -41,11 +42,22 @@ public class Main {
     private static void fillUpperHalfRhombus(Character[][] matrix) {
         int index = 0;
         int halfSize = matrix.length / 2;
-        for (int i = 0; i < halfSize; i++) {
+
+
+        for (int i = 0; i < halfSize ; i++) {
+            for (int j = 0; j <  halfSize - i ; j++) {
+                matrix[i][j] = '.';
+            }
+
             for (int j = 0; j < matrix.length; j++) {
                if (index % 2 == 0){
                    matrix[i][(matrix.length/2) - 1] = '/';
                    matrix[i][(matrix.length/2) ] = '\\';
+
+                   matrix[i][(matrix.length/2) - 1 - i] = '/';
+                   matrix[i][(matrix.length/2) + i ] = '\\';
+
+
                } else if (index % 2 != 0){
                    matrix[i][(matrix.length/2) - 1 - i] = '/';
                    matrix[i][(matrix.length/2) + i ] = '\\';
@@ -68,6 +80,13 @@ public class Main {
                 if (index == matrix.length -1   || index % 2 != 0){
                    matrix[matrix.length - i ][(matrix.length/2) - 1]  = '\\';
                     matrix[matrix.length - i ][(matrix.length/2) ] = '/';
+                    matrix[matrix.length - i ][(matrix.length/2) - 1 + i]  = '/';
+                    matrix[matrix.length - i ][(matrix.length/2) - i ] = '\\';
+
+                }else if (index % 2 == 0) {
+                    matrix[matrix.length - i ][(matrix.length/2) - 1 + i]  = '/';
+                    matrix[matrix.length - i ][(matrix.length/2) - i ] = '\\';
+
                 }
 
 
