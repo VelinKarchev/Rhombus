@@ -1,40 +1,58 @@
+import java.util.Scanner;
+
 public class Hollol {
     public static void main(String[] args) {
-        //logic to print the first half pattern
-        for(int i=1; i<=10; i++)
-        {
-            for(int j=1; j<=10-i+1; j++)
-            {
-                System.out.print("*");
-            }
-//loop calculates space
-            for(int k=1; k<=2*i-2; k++)
-            {
+        // take input
+        Scanner scan = new Scanner(System.in);
+        int n = 0;
+        System.out.print("Enter N value:: ");
+        n = scan.nextInt();
+        printStarHollowDiamond(n);
+    }
+
+    private static void printStarHollowDiamond(int n) {
+        if(n <= 0)
+            System.out.println("Enter Positive Number");
+
+        // for first half portion (top to bottom)
+        for(int i=1; i <= n+1; i++) {
+
+            // print space
+            for(int j = i; j <= n; j++) {
                 System.out.print(" ");
             }
-            for(int j=1; j<=10-i+1; j++)
-            {
-                System.out.print("*");
+
+            // print digit or space
+            for(int k = 1; k <= 2*i-1; k++) {
+                if(k==1 || k==(2*i-1) )
+                    System.out.print("?");
+                else
+                    System.out.print(" ");
             }
+
+            // new line
             System.out.println();
         }
-//logic to print the second half pattern
-        for(int i=9; i>=1; i--)
-        {
-            for(int j=i; j<=10; j++)
-            {
-                System.out.print("*");
-            }
-//loop calculates space
-            for(int k=1; k<=(2*i)-2; k++)
-            {
+
+        // for second half portion
+        for(int i=n; i >= 1; i--) {
+
+            // print space
+            for(int j=n; j >= i; j--) {
                 System.out.print(" ");
             }
-            for(int j=i; j<=10; j++)
-            {
-                System.out.print("*");
+
+            // print digit or space
+            for(int k=1; k <= 2*i-1; k++) {
+                if(k==1 || k==(2*i-1) )
+                    System.out.print("*");
+                else
+                    System.out.print(" ");
             }
+
+            // new line
             System.out.println();
         }
     }
+
 }
