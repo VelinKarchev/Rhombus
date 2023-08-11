@@ -44,25 +44,30 @@ public class Main {
         int halfSize = matrix.length / 2;
 
 
-        for (int i = 0; i < halfSize ; i++) {
-            for (int j = 0; j <  halfSize - i ; j++) {
+        for (int i = 0; i < halfSize; i++) {
+            for (int j = 0; j < halfSize - i; j++) {
+                matrix[i][j] = '.';
+            }
+            for (int j = halfSize + index; j < matrix.length ; j++) {
                 matrix[i][j] = '.';
             }
 
+
+
+
             for (int j = 0; j < matrix.length; j++) {
-               if (index % 2 == 0){
-                   matrix[i][(matrix.length/2) - 1] = '/';
-                   matrix[i][(matrix.length/2) ] = '\\';
+                if (index % 2 == 0) {
+                    matrix[i][(matrix.length / 2) - 1] = '/';
+                    matrix[i][(matrix.length / 2)] = '\\';
 
-                   matrix[i][(matrix.length/2) - 1 - i] = '/';
-                   matrix[i][(matrix.length/2) + i ] = '\\';
+                    matrix[i][(matrix.length / 2) - 1 - i] = '/';
+                    matrix[i][(matrix.length / 2) + i] = '\\';
 
 
-               } else if (index % 2 != 0){
-                   matrix[i][(matrix.length/2) - 1 - i] = '/';
-                   matrix[i][(matrix.length/2) + i ] = '\\';
-               }
-
+                } else if (index % 2 != 0) {
+                    matrix[i][(matrix.length / 2) - 1 - i] = '/';
+                    matrix[i][(matrix.length / 2) + i] = '\\';
+                }
 
 
             }
@@ -72,20 +77,20 @@ public class Main {
 
     private static void fillBottomHalfRhombus(Character[][] matrix) {
 
-        int halfSize = (matrix.length / 2) ;
+        int halfSize = (matrix.length / 2);
         int index = halfSize;
 
         for (int i = halfSize; i > 0; i--) {
             for (int j = matrix.length; j > 0; j--) {
-                if (index == matrix.length -1   || index % 2 != 0){
-                   matrix[matrix.length - i ][(matrix.length/2) - 1]  = '\\';
-                    matrix[matrix.length - i ][(matrix.length/2) ] = '/';
-                    matrix[matrix.length - i ][(matrix.length/2) - 1 + i]  = '/';
-                    matrix[matrix.length - i ][(matrix.length/2) - i ] = '\\';
+                if (index == matrix.length - 1 || index % 2 != 0) {
+                    matrix[matrix.length - i][(matrix.length / 2) - 1] = '\\';
+                    matrix[matrix.length - i][(matrix.length / 2)] = '/';
+                    matrix[matrix.length - i][(matrix.length / 2) - 1 + i] = '/';
+                    matrix[matrix.length - i][(matrix.length / 2) - i] = '\\';
 
-                }else if (index % 2 == 0) {
-                    matrix[matrix.length - i ][(matrix.length/2) - 1 + i]  = '/';
-                    matrix[matrix.length - i ][(matrix.length/2) - i ] = '\\';
+                } else if (index % 2 == 0) {
+                    matrix[matrix.length - i][(matrix.length / 2) - 1 + i] = '/';
+                    matrix[matrix.length - i][(matrix.length / 2) - i] = '\\';
 
                 }
 
