@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class MainWork {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int outerRhombSize = readInput(scanner);
@@ -10,7 +10,7 @@ public class Main {
 
         fillUpperHalfRhombus(matrix);
         fillBottomHalfRhombus(matrix);
-
+        fillDots(matrix);
         printMatrix(matrix);
 
     }
@@ -49,7 +49,7 @@ public class Main {
                 matrix[i][j] = '.';
 
             }
-            for (int j = halfSize + index; j < matrix.length ; j++) {
+            for (int j = halfSize + index; j < matrix.length; j++) {
                 matrix[i][j] = '.';
             }
 
@@ -71,22 +71,26 @@ public class Main {
 
             }
             index++;
+
+            
         }
+        
     }
 
     private static void fillBottomHalfRhombus(Character[][] matrix) {
 
         int halfSize = (matrix.length / 2);
         int index = halfSize;
-
+        int decrease = halfSize -1;
         for (int i = halfSize; i > 0; i--) {
 
-//            for (int j = halfSize;  halfSize > j; j--) {
-//                matrix[index + 1][j] = '.';
-//            }
-//            for (int j = halfSize + index;  matrix.length > j; j--) {
-//                matrix[i][j] = '.';
-//            }
+            for (int j = 0; j < halfSize - i + 1; j++) {
+                matrix[index][j] = '.';
+            }
+
+            for (int j = halfSize + decrease; j < matrix.length; j++) {
+                matrix[index][j] = '.';
+            }
 
 
             for (int j = matrix.length; j > 0; j--) {
@@ -100,11 +104,24 @@ public class Main {
                     matrix[matrix.length - i][(matrix.length / 2) - 1 + i] = '/';
                     matrix[matrix.length - i][(matrix.length / 2) - i] = '\\';
 
+                    matrix[matrix.length - i][(matrix.length / 2) - 1 + i] = '/';
+                    matrix[matrix.length - i][(matrix.length / 2) - i] = '\\';
+
+
                 }
 
 
             }
             index++;
+            decrease--;
         }
+    }
+    
+    public static void fillDots(Character[][] matrix){
+
+        for (int i = 0; i < 1; i++) {
+            
+        }
+        
     }
 }
