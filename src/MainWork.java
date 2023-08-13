@@ -14,7 +14,6 @@ public class MainWork {
         fillBottomHalf(matrix);
         printMatrix(matrix);
 
-
     }
 
 
@@ -64,6 +63,10 @@ public class MainWork {
                     matrix[i][(matrix.length / 2) + i] = '\\';
                 }
 
+                if (i != 2){
+                    matrix[i][(matrix.length / 2)  - i + 2] = '/';
+                    matrix[i][(matrix.length / 2) + i + 1] = '\\';
+                }
 
             }
             index++;
