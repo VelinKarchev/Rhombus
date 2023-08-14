@@ -24,6 +24,7 @@ public class Matrix {
 //                }else {
 //                    matrix[i][j] = '/';
 //                }
+                //https://www.youtube.com/watch?v=vywvqdKpdC4
             }
 
         }
