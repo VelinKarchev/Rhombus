@@ -22,8 +22,8 @@ public class Matrix {
         }
 
         //top right corner
-        for (int i = 0; i < halfLength; i++) {
-            for (int j = 0; j < halfLength; j++) {
+        for (int i = 0; i < halfRows; i++) {
+            for (int j = 0; j < halfCols; j++) {
 
 
             }

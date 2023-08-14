@@ -1,6 +1,8 @@
+package Try3;
+
 import java.util.Scanner;
 
-public class MainWork {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int outerRhombSize = readInput(scanner);
@@ -42,7 +44,6 @@ public class MainWork {
 
     private static void fillUpperHalf(Character[][] matrix) {
         int index = 0;
-        int curr = 1;
         int halfSize = matrix.length / 2;
 
 
@@ -52,7 +53,6 @@ public class MainWork {
 
             for (int j = 0; j < matrix.length; j++) {
                 if (index % 2 == 0) {
-
                     matrix[i][(matrix.length / 2) - 1] = '/';
                     matrix[i][(matrix.length / 2)] = '\\';
 
@@ -61,23 +61,11 @@ public class MainWork {
 
 
                 } else if (index % 2 != 0) {
-
                     matrix[i][(matrix.length / 2) - 1 - i] = '/';
                     matrix[i][(matrix.length / 2) + i] = '\\';
-                    // here inside rhombus
-                    if (i > 2) {
-                        for (int k = i; k >= i ; k--) {
-                            matrix[i][matrix.length/2 - k + 1 ]  = '/';
-                            matrix[i][matrix.length/2 + curr] = '\\';
-
-                        }
-
-                    }
-
-
                 }
 
-                if (j != 2){
+                if (i != 2){
 //                    matrix[i][(matrix.length / 2)  - i + 2] = '/';
 //                    matrix[i][(matrix.length / 2) + i + 1] = '\\';
                 }
