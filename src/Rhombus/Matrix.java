@@ -13,7 +13,7 @@ public class Matrix {
         for (int i = 0; i < halfRows; i++) {
             for (int j = 0; j < halfCols; j++) {
 
-
+            matrix[halfRows++][halfCols--] = '/';
 
 
 
