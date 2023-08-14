@@ -7,15 +7,25 @@ public class Matrix {
 
         int halfRows = matrix.length / 2;
         int halfCols = 0;
-
+        boolean isEmptySpace = true;
 
         //top left
         for (int i = 0; i < halfRows; i++) {
-            for (int j = 0; j <= matrix.length; j++) {
+            for (int j = 0; j < matrix.length; j++) {
                 if (i + j == matrix.length / 2 - 1) {
                     matrix[i][j] = '/';
                 }
+                if (isEmptySpace) {
+                    if (i + j == matrix.length / 2) {
+                        matrix[i][j] = ' ';
+                    }
+                    isEmptySpace = false;
+                }
+//                }else {
+//                    matrix[i][j] = '/';
+//                }
             }
+
         }
 
 
