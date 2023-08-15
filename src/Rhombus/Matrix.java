@@ -26,11 +26,12 @@ public class Matrix {
             int d = matrix.length/2 - 1;
             int f = k;
             while (f <= matrix.length/2 - 1) {
+
                 if (isEmptySpace) {
 
                         matrix[d][f] = ' ';
                 }else {
-                    isEmptySpace = true;
+
                     matrix[d][f] = '/';
                 }
                 d--;
