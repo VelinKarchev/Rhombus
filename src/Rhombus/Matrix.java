@@ -15,18 +15,28 @@ public class Matrix {
                 if (i + j == matrix.length / 2 - 1) {
                     matrix[i][j] = '/';
                 }
-                if (isEmptySpace) {
-                    if (i + j == matrix.length / 2) {
-                        matrix[i][j] = ' ';
-                    }
-                    isEmptySpace = false;
-                }
-//                }else {
-//                    matrix[i][j] = '/';
-//                }
-                //https://www.youtube.com/watch?v=vywvqdKpdC4
             }
 
+
+            //https://www.youtube.com/watch?v=vywvqdKpdC4
+
+            //https://www.youtube.com/watch?v=T8ErAYobcbc
+        }
+        for (int k = 1; k <= matrix.length/2 - 1; k++) {
+            int d = matrix.length/2 - 1;
+            int f = k;
+            while (f <= matrix.length/2 - 1) {
+                if (isEmptySpace) {
+
+                        matrix[d][f] = ' ';
+                }else {
+                    isEmptySpace = true;
+                    matrix[d][f] = '/';
+                }
+                d--;
+                f++;
+            }
+            isEmptySpace = !isEmptySpace;
         }
 
 
@@ -56,8 +66,8 @@ public class Matrix {
                 }
             }
         }
-         halfRows = matrix.length / 2;
-         halfCols = matrix.length / 2;
+        halfRows = matrix.length / 2;
+        halfCols = matrix.length / 2;
         //bottom right
         for (int i = halfRows; i < matrix.length; i++) {
             for (int j = halfCols; j <= matrix.length; j++) {
@@ -67,7 +77,8 @@ public class Matrix {
             }
         }
     }
-    public static void fillWithDots(Character[][] matrix){
+
+    public static void fillWithDots(Character[][] matrix) {
         int halfSize = matrix.length / 2;
         int indexDown = halfSize;
         int decrease = halfSize - 1;
@@ -82,7 +93,7 @@ public class Matrix {
             for (int j = halfSize + index; j < matrix.length; j++) {
                 matrix[i][j] = '.';
             }
-            index ++;
+            index++;
 
         }
 
