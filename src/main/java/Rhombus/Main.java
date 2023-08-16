@@ -1,17 +1,15 @@
 package Rhombus;
 
-import java.util.Scanner;
-
-import static Rhombus.Matrix.fillMatrix;
+import static Rhombus.RhombusImplementedInMatrix.fillMatrix;
 import static Rhombus.PrintMatrix.printMatrix;
-import static Rhombus.Utils.readInput;
+import static Rhombus.Scanner.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        int matrixSize = readInput(scanner);
+        int matrixSize = readInput(startScanner());
+        closeScanner(startScanner());
 
         String[][] matrix = new String[matrixSize][matrixSize];
 

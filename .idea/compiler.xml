@@ -9,8 +9,5 @@
         <module name="Rhombus" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Rhombus" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>
