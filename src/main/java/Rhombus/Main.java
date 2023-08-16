@@ -5,15 +5,12 @@ import static Rhombus.PrintMatrix.printMatrix;
 import static Rhombus.ScannerImpl.*;
 
 public class Main {
-
     public static void main(String[] args) {
 
-        int matrixSize = readInput(startScanner());
-        closeScanner(startScanner());
+        Pattern pattern = new Pattern(readInput(scanner()));
+        closeScanner(scanner());
 
-        String[][] matrix = new String[matrixSize][matrixSize];
-
-        fillMatrix(matrix);
-        printMatrix(matrix);
+        fillMatrix(pattern.getMatrix());
+        printMatrix(pattern.getMatrix());
     }
 }

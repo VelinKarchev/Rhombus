@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ScannerImpl {
 
 
-    public static Scanner startScanner(){
+    public static Scanner scanner(){
         return new Scanner(System.in);
     }
     public static int readInput(Scanner scanner) {
