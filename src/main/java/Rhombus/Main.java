@@ -11,10 +11,11 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         int inputNumber = Integer.parseInt(scanner.nextLine());
+        scanner.close();
 
         Pattern pattern = new Pattern(inputNumber);
 
-        scanner.close();
+
 
         fillMatrix(pattern.getMatrix());
         printMatrix(pattern.getMatrix());
