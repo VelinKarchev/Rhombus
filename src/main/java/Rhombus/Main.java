@@ -15,8 +15,6 @@ public class Main {
 
         Pattern pattern = new Pattern(inputNumber);
 
-
-
         fillMatrix(pattern.getMatrix());
         printMatrix(pattern.getMatrix());
     }
