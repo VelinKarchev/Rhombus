@@ -2,7 +2,7 @@ package Rhombus;
 
 import static Rhombus.RhombusImplementedInMatrix.fillMatrix;
 import static Rhombus.PrintMatrix.printMatrix;
-import static Rhombus.Scanner.*;
+import static Rhombus.ScannerImpl.*;
 
 public class Main {
 
