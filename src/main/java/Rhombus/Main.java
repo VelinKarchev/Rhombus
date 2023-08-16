@@ -1,14 +1,20 @@
 package Rhombus;
 
+import java.util.Scanner;
+
 import static Rhombus.RhombusPatternImplementedInMatrix.fillMatrix;
 import static Rhombus.PrintMatrix.printMatrix;
-import static Rhombus.ScannerImpl.*;
+
 
 public class Main {
     public static void main(String[] args) {
 
-        Pattern pattern = new Pattern(readInput(scanner()));
-        closeScanner(scanner());
+        Scanner scanner = new Scanner(System.in);
+        int inputNumber = Integer.parseInt(scanner.nextLine());
+
+        Pattern pattern = new Pattern(inputNumber);
+
+        scanner.close();
 
         fillMatrix(pattern.getMatrix());
         printMatrix(pattern.getMatrix());
