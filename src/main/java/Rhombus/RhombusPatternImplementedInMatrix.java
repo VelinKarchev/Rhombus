@@ -1,6 +1,6 @@
 package Rhombus;
 
-public class RhombusImplementedInMatrix {
+public class RhombusPatternImplementedInMatrix {
 
     public static void fillMatrix(String[][] matrix) {
 

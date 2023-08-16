@@ -1,6 +1,6 @@
 package Rhombus;
 
-import static Rhombus.RhombusImplementedInMatrix.fillMatrix;
+import static Rhombus.RhombusPatternImplementedInMatrix.fillMatrix;
 import static Rhombus.PrintMatrix.printMatrix;
 import static Rhombus.ScannerImpl.*;
 
